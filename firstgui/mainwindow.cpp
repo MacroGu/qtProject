@@ -15,15 +15,17 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_actionNew_triggered()
 {
-    if (ui->radioButton->isChecked())
-    {
-        QMessageBox::information(this, "title", "Mark");
-    }
-    if (ui->radioButton_2->isChecked())
-    {
-        QMessageBox::information(this, "title", "John");
-    }
+    QMessageBox::information(this, "title", "New");
+}
+
+void MainWindow::on_actionOpen_triggered()
+{
+     QMessageBox::information(this, "title", "Open");
+}
+
+void MainWindow::on_actionExit_triggered()
+{
+    QApplication::quit();
 }
