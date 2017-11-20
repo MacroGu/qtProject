@@ -18,4 +18,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
+//    SecDialog secDialog;
+//    secDialog.setModal(true);
+//    secDialog.exec();
+
+    secDialog = new SecDialog();
+    secDialog->show();
 }
