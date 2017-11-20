@@ -10,11 +10,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->setupUi(this);
 
-//    QPixmap pix("C:/Users/macro/Desktop/login.jpg");
-//    int w = ui->label_pic->width();
-//    int h = ui->label_pic->height();
+    QPixmap pix(":/resources/img/1.jpg");
+    int w = ui->label_pic->width();
+    int h = ui->label_pic->height();
 
-//    ui->label_pic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+    ui->label_pic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
 
     ui->statusBar->addPermanentWidget(ui->label_3);
     ui->statusBar->addPermanentWidget(ui->progressBar);
