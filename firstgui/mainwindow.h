@@ -16,9 +16,6 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-private slots:
-    void on_BT_LoginButton_clicked();
-
 private:
     Ui::MainWindow *ui;
     SecDialog *secDialog;

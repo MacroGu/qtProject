@@ -9,15 +9,6 @@ MainWindow::MainWindow(QWidget *parent) :
 {
 
     ui->setupUi(this);
-
-    QPixmap pix(":/resources/img/1.jpg");
-    int w = ui->label_pic->width();
-    int h = ui->label_pic->height();
-
-    ui->label_pic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
-
-    ui->statusBar->addPermanentWidget(ui->label_3);
-    ui->statusBar->addPermanentWidget(ui->progressBar);
 }
 
 MainWindow::~MainWindow()
@@ -25,23 +16,3 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_BT_LoginButton_clicked()
-{
-    QString username = ui->lineEdit_username->text();
-    QString password = ui->lineEdit_password->text();
-
-
-    if(username == "test" && password == "test")
-    {
-//        QMessageBox::information(this, "Login", "Username and password is correct");
-//        hide();
-//        secDialog = new SecDialog(this);    // "this" is its parent
-//        secDialog->show();
-        ui->statusBar->showMessage("Username and password is correct", 5000);
-    }
-    else
-    {
-        ui->statusBar->showMessage("Username and password is wrong", 5000);
-        //QMessageBox::warning(this, "Login", "Username and password is wrong");
-    }
-}
