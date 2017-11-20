@@ -17,12 +17,11 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_BT_LoginButton_clicked();
 
 private:
     Ui::MainWindow *ui;
     SecDialog *secDialog;
-
 };
 
 #endif // MAINWINDOW_H
