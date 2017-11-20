@@ -14,66 +14,33 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/img/img/1.jpg);</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="label">
+   <widget class="QCheckBox" name="checkBox">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>90</y>
-      <width>211</width>
-      <height>81</height>
+      <x>180</x>
+      <y>60</y>
+      <width>141</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="text">
-     <string>&lt;table border=&quot;1&quot; style=&quot;width:100%&quot;&gt;
-&lt;tr&gt;
-  &lt;td&gt;Jill&lt;/td&gt;
-  &lt;td&gt;Smithl&lt;/td&gt;
-  &lt;td&gt;50&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;Eve&lt;/td&gt;
-  &lt;td&gt;Jackson&lt;/td&gt;
-  &lt;td&gt;94&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-</string>
+     <string>Do you like applies</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>220</y>
-      <width>131</width>
-      <height>51</height>
+      <x>200</x>
+      <y>170</y>
+      <width>75</width>
+      <height>23</height>
      </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color:red;
-font:bold italic large &quot;Times New Roman&quot;;
-font-size:12px;
-</string>
     </property>
     <property name="text">
-     <string>PushButton</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>100</y>
-      <width>181</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-width:2px;
-border-style:solid;
-border-color:darkblue;</string>
+     <string>Check</string>
     </property>
    </widget>
   </widget>
