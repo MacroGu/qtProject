@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
+#include <QPixmap>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -9,6 +10,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->setupUi(this);
 
+//    QPixmap pix("C:/Users/macro/Desktop/login.jpg");
+//    int w = ui->label_pic->width();
+//    int h = ui->label_pic->height();
+
+//    ui->label_pic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
 }
 
 MainWindow::~MainWindow()
