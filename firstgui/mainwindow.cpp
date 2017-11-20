@@ -8,7 +8,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->checkBox->setChecked(true);
 }
 
 MainWindow::~MainWindow()
@@ -19,16 +18,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-}
-
-void MainWindow::on_checkBox_stateChanged(int arg1)
-{
-    if (arg1)
+    if (ui->radioButton->isChecked())
     {
-        QMessageBox::information(this, "title", "yes, user likes apples");
+        QMessageBox::information(this, "title", "Mark");
     }
-    else
+    if (ui->radioButton_2->isChecked())
     {
-        QMessageBox::information(this, "title", "no, user does not like apples");
+        QMessageBox::information(this, "title", "John");
     }
 }
