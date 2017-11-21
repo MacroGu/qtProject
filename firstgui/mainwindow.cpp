@@ -8,16 +8,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-//    ui->comboBox->addItem(QIcon(":/img/img/open.jpg"),"Mark");
-//    ui->comboBox->addItem(QIcon(":/img/img/open.jpg"),"Jhon");
-//    ui->comboBox->addItem(QIcon(":/img/img/1.jpg"),"July");
+    QListWidgetItem *item = new QListWidgetItem(QIcon(":/img/img/open.jpg"), "Mark");
+    ui->listWidget->addItem(item);
+    QListWidgetItem *item2 = new QListWidgetItem(QIcon(":/img/img/open.jpg"), "John");
+    ui->listWidget->addItem(item2);
+    QListWidgetItem *item3 = new QListWidgetItem(QIcon(":/img/img/open.jpg"), "July");
+    ui->listWidget->addItem(item3);
 
-    for (int i = 0; i < 10; i++)
-    {
-        ui->comboBox->addItem(QIcon(":/img/img/open.jpg"), QString::number(i) + "name");
-    }
-
-    ui->comboBox->insertItem(3, QIcon(":/img/img/1.jpg"), "New Text");
 }
 
 MainWindow::~MainWindow()
@@ -27,5 +24,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    QMessageBox::information(this, "title", QString::number(ui->comboBox->currentIndex()));
+//    QMessageBox::information(this, "title", ui->listWidget->currentItem()
+//                             ->text());
+    ui->listWidget->currentItem()->setBackgroundColor(Qt::red);
+    ui->listWidget->currentItem()->setForeground(Qt::white);
 }
