@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "secdialog.h"
+#include <QTimer>
 
 namespace Ui {
 class MainWindow;
@@ -16,13 +17,13 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-
-private slots:
-    void on_pushButton_clicked();
+public slots:
+    void myfunction();
 
 private:
     Ui::MainWindow *ui;
     SecDialog *secDialog;
+    QTimer *timer;
 };
 
 #endif // MAINWINDOW_H
