@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "secdialog.h"
 #include <QTimer>
 
 namespace Ui {
@@ -41,7 +40,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    SecDialog *secDialog;
+    QString file_path_;
 };
 
 #endif // MAINWINDOW_H
