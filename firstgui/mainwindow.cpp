@@ -1,34 +1,14 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
-#include <QDir>
+#include <QFile>
+#include <QTextStream>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QDir dir;
-    foreach(QFileInfo var, dir.drives())
-    {
-        ui->comboBox->addItem(var.absoluteFilePath());
-    }
-
-    QDir dir_2("D:/tools");
-    foreach(QFileInfo var, dir_2.entryInfoList())
-    {
-        if(var.isDir())
-        {
-            ui->listWidget->addItem("Dir : " + var.absoluteFilePath());
-
-        }
-        if(var.isFile())
-        {
-             ui->listWidget->addItem("File : " + var.absoluteFilePath());
-        }
-
-    }
-
 }
 
 MainWindow::~MainWindow()
@@ -38,13 +18,32 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    QDir dir("D:/toolsDIr");
-    if (dir.exists())
+    QFile file("D:/toolsDIr/myfile.txt");
+
+    if (!file.open(QFile::WriteOnly | QFile::Text))
     {
-        QMessageBox::information(this, "", "dir exists");
+        QMessageBox::warning(this, "title", "file not open");
     }
-    else
+
+    QTextStream out(&file);
+    QString text = ui->plainTextEdit->toPlainText();
+    out << text;
+    file.flush();
+    file.close();
+
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    QFile file("D:/toolsDIr/myfile.txt");
+
+    if (!file.open(QFile::ReadOnly | QFile::Text))
     {
-        dir.mkpath("D:/toolsDIr");
+        QMessageBox::warning(this, "title", "file not open");
     }
+
+    QTextStream in(&file);
+    QString text = in.readAll();
+    ui->plainTextEdit->setPlainText(text);
+    file.close();
 }
