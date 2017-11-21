@@ -3,6 +3,8 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QTextStream>
+#include <QFileDialog>
+#include <QDir>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -16,26 +18,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
 void MainWindow::on_pushButton_clicked()
 {
-    QFile file("D:/toolsDIr/myfile.txt");
-
-    if (!file.open(QFile::WriteOnly | QFile::Text))
-    {
-        QMessageBox::warning(this, "title", "file not open");
-    }
-
-    QTextStream out(&file);
-    QString text = ui->plainTextEdit->toPlainText();
-    out << text;
-    file.flush();
-    file.close();
-
-}
-
-void MainWindow::on_pushButton_2_clicked()
-{
-    QFile file("D:/toolsDIr/myfile.txt");
+    QString filter = "All File (*.*) ;; Text File (*.txt) ;; XML File (*.xml)";
+    QString file_name = QFileDialog::getOpenFileName(this, "open a file", "D://",filter);
+    QFile file(file_name);
 
     if (!file.open(QFile::ReadOnly | QFile::Text))
     {
