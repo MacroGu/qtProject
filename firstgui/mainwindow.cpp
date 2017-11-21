@@ -6,6 +6,7 @@
 #include <QFileDialog>
 #include <QDir>
 #include <QDebug>
+#include <QDateTime>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -24,5 +25,13 @@ MainWindow::~MainWindow()
 
 void MainWindow::myfunction()
 {
-    qDebug() << "update... " ;
+    QTime time = QTime::currentTime();
+    QString time_text = time.toString("hh - mm - ss");
+    if ((time.second() % 2) == 0)
+    {
+        time_text[3] = ' ';
+        time_text[8] = ' ';
+    }
+    ui->label_date_time->setText(time_text);
+
 }
