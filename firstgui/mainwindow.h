@@ -17,11 +17,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_actionNew_triggered();
-
-    void on_actionOpen_triggered();
-
-    void on_actionExit_triggered();
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
