@@ -37,6 +37,7 @@
      <string>Edit</string>
     </property>
     <addaction name="actionColor"/>
+    <addaction name="actionPeint"/>
    </widget>
    <addaction name="menuAbout"/>
   </widget>
@@ -58,6 +59,11 @@
   <action name="actionColor">
    <property name="text">
     <string>Color</string>
+   </property>
+  </action>
+  <action name="actionPeint">
+   <property name="text">
+    <string>peint</string>
    </property>
   </action>
  </widget>

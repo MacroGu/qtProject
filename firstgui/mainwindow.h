@@ -20,6 +20,8 @@ public:
 private slots:
     void on_actionColor_triggered();
 
+    void on_actionPeint_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString file_path_;

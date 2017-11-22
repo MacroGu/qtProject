@@ -5,6 +5,8 @@
 #include <QFont>
 #include <QColorDialog>
 #include <QColor>
+#include <QPrintDialog>
+#include <QPrinter>
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -24,7 +26,16 @@ void MainWindow::on_actionColor_triggered()
     QColor color = QColorDialog::getColor(Qt::white, this, "Choose Color");
     if (color.isValid())
     {
-        ui->textEdit->setTextBackgroundColor(color);
+        ui->textEdit->setPalette(QPalette(color));
     }
 
+}
+
+void MainWindow::on_actionPeint_triggered()
+{
+    QPrinter printer ;
+    printer.setPrinterName("desierd printer name");
+    QPrintDialog dialog(&printer,this);
+    if(dialog.exec() == QDialog::Rejected) return;
+    ui->textEdit->print(&printer);
 }
