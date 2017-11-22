@@ -3,6 +3,8 @@
 #include <QMessageBox>
 #include <QFontDialog>
 #include <QFont>
+#include <QColorDialog>
+#include <QColor>
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -17,18 +19,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_actionFont_triggered()
+void MainWindow::on_actionColor_triggered()
 {
-    bool ok;
-    QFont font = QFontDialog::getFont(&ok, this);
-    if (ok)
+    QColor color = QColorDialog::getColor(Qt::white, this, "Choose Color");
+    if (color.isValid())
     {
-        ui->actionFont->setFont(font);
+        ui->textEdit->setTextBackgroundColor(color);
     }
-    else
-    {
-        return;
-    }
-
 
 }

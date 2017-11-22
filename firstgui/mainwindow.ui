@@ -16,7 +16,13 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QTextEdit" name="textEdit"/>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
@@ -30,7 +36,7 @@
     <property name="title">
      <string>Edit</string>
     </property>
-    <addaction name="actionFont"/>
+    <addaction name="actionColor"/>
    </widget>
    <addaction name="menuAbout"/>
   </widget>
@@ -49,9 +55,9 @@
    <addaction name="separator"/>
    <addaction name="separator"/>
   </widget>
-  <action name="actionFont">
+  <action name="actionColor">
    <property name="text">
-    <string>Font</string>
+    <string>Color</string>
    </property>
   </action>
  </widget>
