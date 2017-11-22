@@ -1,7 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
-#include "form.h"
+#include <QFontDialog>
+#include <QFont>
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -15,13 +17,18 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_tabWidget_tabCloseRequested(int index)
+void MainWindow::on_actionFont_triggered()
 {
-    ui->tabWidget->removeTab(index);
-}
+    bool ok;
+    QFont font = QFontDialog::getFont(&ok, this);
+    if (ok)
+    {
+        ui->actionFont->setFont(font);
+    }
+    else
+    {
+        return;
+    }
 
-void MainWindow::on_pushButton_clicked()
-{
-    ui->tabWidget->addTab(new Form(), QString("Tab %0").arg(ui->tabWidget->count() + 1));
-    ui->tabWidget->setCurrentIndex(ui->tabWidget->count() - 1);
+
 }
